@@ -27,4 +27,5 @@ COPY    starter.sh CONTAINER.* ./
 COPY    internal/* ./internal/
 COPY    tools/* ./tools/
 RUN echo "`date +%F` (`date +%s`)" > CONTAINER.release \
-    && chown -R rsyslog:rsyslog *
+    && chown -R rsyslog:rsyslog * \
+    && chmod +x ./starter.sh
