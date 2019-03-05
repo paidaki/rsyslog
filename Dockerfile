@@ -14,8 +14,7 @@ RUN echo "http://alpine.rsyslog.com/3.7/stable" >> /etc/apk/repositories \
        rsyslog-omstdout \
        rsyslog-mysql \
        rsyslog-tls \
-       nano \
-       tzdata
+       nano
 RUN adduser -s /bin/ash -D rsyslog rsyslog \
     && echo "rsyslog ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 VOLUME  /config /work /logs
