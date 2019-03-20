@@ -16,7 +16,6 @@ RUN	adduser -s /bin/ash -D rsyslog rsyslog \
 	&& echo "rsyslog ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 VOLUME	/config /work /logs
 CMD	["rsyslog"]
-RUN	chmod +x /home/appliance/starter.sh
 ENTRYPOINT ["/home/appliance/starter.sh"]
 COPY	rsyslog.conf /etc/rsyslog.conf
 COPY	rsyslog.conf.d/*.conf /etc/rsyslog.conf.d/
@@ -28,3 +27,4 @@ COPY	internal/* ./internal/
 COPY	tools/* ./tools/
 RUN	echo "`date +%F` (`date +%s`)" > CONTAINER.release \
 	&& chown -R rsyslog:rsyslog *
+RUN	chmod +x /home/appliance/starter.sh
