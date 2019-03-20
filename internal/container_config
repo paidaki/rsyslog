@@ -4,7 +4,7 @@
 # desired values.
 
 # general container app settings:
-export TZ=Europe/Athens
+#export TZ=UTC
 #export CONTAINER_SILENT=on  # do not emit startup message
 export ENABLE_STATISTICS=on
 
